@@ -7,7 +7,7 @@ Factors are a very useful type of variable in R, but they can also drive you nut
 ### Installation
 
 ``` r
-devtools::install_github("jennybc/foofactors")
+devtools::install_github("scienceisfiction/foofactors")
 ```
 
 ### Quick demo
