@@ -14,3 +14,5 @@ Suggests: testthat,
     rmarkdown
 Imports: dplyr
 VignetteBuilder: knitr
+URL: https://github.com/scienceisfiction/foofactors
+BugReports: https://github.com/scienceisfiction/foofactors/issues
