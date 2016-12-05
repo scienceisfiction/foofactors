@@ -1,0 +1,49 @@
+---
+title: "Foo Factors"
+author: "Melissa Armstrong"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Foo Factors}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+## Vignette Info
+
+I don't have much to say but I'll try to pull stuff out of examples or tests or something:
+
+Binding two factors with fbind():
+
+```{r}
+library(foofactors)
+(a <- factor(c("character", "hits", "your", "eyeballs")))
+(b <- factor(c("but", "integer", "where it", "counts")))
+```
+
+Concatenating is weird:
+
+```{r}
+c(a, b)
+```
+
+So fbind() glues two factors together and returns a factor:
+
+```{r}
+fbind(a, b)
+```
+
+Sometimes we want a table of frequencies for the levels of a factor. Base table() returns an object of class table, which can be inconvenient for downstream work. Processing as.data.fram() can help but it's still clunky:
+
+```{r}
+set.seed(1234)
+x <- factor(sample(letters[1:5], size = 100, replace = TRUE))
+table(x)
+as.data.frame(table(x))
+```
+
+The freq_out() function returns a frequency table as a well-named tbl_df:
+
+```{r}
+freq_out(x)
+```
